@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDITAR: título, descrição e domínio (og:url / og:image) -->
+<title>Gabrieli Froehner · Psicóloga | Psicoterapia online em TCC</title>
+<meta name="description" content="Psicoterapia online em Terapia Cognitivo-Comportamental (TCC) para adolescentes a partir de 17 anos e adultos. Acolhimento especial para mulheres e pessoas LGBTQIAP+. Gabrieli Froehner, Psicóloga, CRP 00/00000.">
+<meta name="author" content="Gabrieli Froehner">
+<meta name="theme-color" content="#08595E">
+<link rel="canonical" href="https://gabrielifroehner.com.br/"><!-- EDITAR: domínio -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Gabrieli Froehner · Psicóloga">
+<meta property="og:description" content="Um espaço seguro para você se escutar. Psicoterapia online em TCC.">
+<meta property="og:url" content="https://gabrielifroehner.com.br/"><!-- EDITAR: domínio -->
+<meta property="og:image" content="https://gabrielifroehner.com.br/simbolo.png"><!-- EDITAR: domínio + imagem de compartilhamento (ideal 1200x630) -->
+<meta name="twitter:card" content="summary_large_image">
+<!-- EDITAR: favicon (símbolo isolado da flor) -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Nunito:wght@400;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+:root{
+  --color-primary:#08595E; --color-primary-dark:#064549;
+  --color-accent:#EA7A66; --color-accent-dark:#C9533F;
+  --color-highlight:#EDB22B; --color-soft:#AD82AA;
+  --color-text:#141416; --color-muted:#4A4A50;
+  --color-bg:#FBF5EC; --color-sand:#F1E4D3; --color-mint:#DCEBE8;
+  --color-rose:#F9E1DA; --color-lilac:#EFE3EE; --color-mustard-soft:#FBEBC4;
+  --color-surface:#FFFFFF;
+  --font-heading:'Outfit',system-ui,sans-serif;
+  --font-body:'Nunito',system-ui,sans-serif;
+  --font-hand:'Caveat',cursive;
+  --radius:16px; --radius-pill:999px;
+  --container:1160px;
+  --shadow-soft:0 10px 30px -12px rgba(8,89,94,.18);
+  --shadow-card:0 2px 6px rgba(20,20,22,.04),0 18px 40px -20px rgba(8,89,94,.22);
+  --ease:cubic-bezier(.45,.05,.35,1);
+  --header-h:76px;
+}
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{margin:0;font-family:var(--font-body);font-size:1.0625rem;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:var(--color-primary)}
+h1,h2,h3{font-family:var(--font-heading);color:var(--color-primary);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-weight:800;font-size:clamp(2.2rem,5.4vw,3.9rem)}
+h2{font-weight:800;font-size:clamp(1.85rem,3.8vw,2.75rem)}
+h3{font-weight:700;font-size:1.35rem}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--color-highlight);outline-offset:3px;border-radius:6px}
+.container{width:min(100% - 2.5rem,var(--container));margin-inline:auto}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:fixed;left:1rem;top:-100px;z-index:200;background:var(--color-primary);color:#fff;padding:.75rem 1.25rem;border-radius:var(--radius-pill);font-weight:700;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:1rem}
+section{position:relative;padding:clamp(4.5rem,9vw,7.5rem) 0}
+.hand{font-family:var(--font-hand);font-weight:600;font-size:clamp(1.5rem,2.6vw,1.9rem);color:var(--color-accent-dark);display:block;line-height:1;margin-bottom:.35rem}
+.on-dark .hand{color:var(--color-highlight)}
+.section-head{max-width:640px;margin-bottom:3rem}
+.section-head.center{text-align:center;margin-inline:auto}
+.lead{font-size:1.15rem;color:var(--color-muted)}
+.on-dark{background:var(--color-primary);color:#fff}
+.on-dark h2,.on-dark h3{color:#fff}
+.on-dark .lead{color:rgba(255,255,255,.86)}
+.bg-sand{background:var(--color-sand)} .bg-lilac{background:var(--color-lilac)}
+/* patterns (gerados no JS como data-URI) */
+.pattern-green{background-image:var(--pat-green);background-size:260px}
+.pattern-creme{background-image:var(--pat-creme);background-size:300px}
+.pattern-sand{background-image:var(--pat-sand);background-size:280px}
+.pattern-strip{height:42px;background-color:var(--color-bg);background-image:var(--pat-creme);background-size:180px}
+/* =========================================================
+   3. BOTÕES
+   ========================================================= */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-heading);font-weight:700;font-size:1rem;padding:.95rem 1.7rem;border-radius:var(--radius-pill);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease),color .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--color-primary);color:#fff}
+.btn-primary:hover{background:var(--color-primary-dark)}
+/* coral: texto grafite p/ contraste AA em texto de botão */
+.btn-accent{background:var(--color-accent);color:var(--color-text);box-shadow:0 10px 24px -12px rgba(234,122,102,.8)}
+.btn-accent:hover{background:#F08C7A}
+.btn-outline{border-color:var(--color-primary);color:var(--color-primary);background:transparent}
+.btn-outline:hover{background:var(--color-primary);color:#fff}
+.btn-sm{padding:.6rem 1.25rem;font-size:.95rem}
+/* =========================================================
+   4. LOADER
+   ========================================================= */
+.loader{position:fixed;inset:0;z-index:300;background:var(--color-bg);display:grid;place-items:center;transition:opacity .5s var(--ease),visibility .5s}
+.loader.hide{opacity:0;visibility:hidden}
+.loader svg{width:110px}
+.loader .draw path{stroke-dasharray:260;stroke-dashoffset:260;animation:draw 1s var(--ease) forwards}
+.loader .draw g:nth-child(2) path{animation-delay:.12s}.loader .draw g:nth-child(3) path{animation-delay:.24s}
+.loader .draw g:nth-child(4) path{animation-delay:.36s}.loader .draw g:nth-child(5) path{animation-delay:.48s}
+@keyframes draw{to{stroke-dashoffset:0}}
+/* =========================================================
+   5. HEADER
+   ========================================================= */
+.header{position:fixed;inset:0 0 auto;z-index:100;height:var(--header-h);background:rgba(251,245,236,.92);backdrop-filter:blur(10px);transition:box-shadow .3s var(--ease)}
+.header.scrolled{box-shadow:0 6px 24px -14px rgba(8,89,94,.35)}
+.header .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;text-decoration:none;padding:6px 0}
+.brand img{height:46px;width:auto}
+.logo-fallback{font-family:var(--font-heading);line-height:.95;color:var(--color-text)}
+.logo-fallback b{display:block;font-weight:800;font-size:1.25rem;text-transform:lowercase}
+.logo-fallback span{display:block;font-weight:500;font-size:.8rem;letter-spacing:.2em;color:var(--color-primary)}
+.on-dark .logo-fallback b,.footer .logo-fallback b{color:#fff}.footer .logo-fallback span{color:var(--color-mint)}
+.nav{display:none}
+.nav ul{list-style:none;display:flex;gap:1.75rem;margin:0;padding:0}
+.nav a{font-family:var(--font-heading);font-weight:500;text-decoration:none;color:var(--color-text);position:relative;padding:.25rem 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--color-accent);transform:scaleX(0);transition:transform .3s var(--ease)}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
+.header-cta{display:none}
+.burger{width:46px;height:46px;border-radius:50%;border:0;background:var(--color-primary);display:grid;place-items:center;cursor:pointer}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;border-radius:2px;background:#fff;position:relative;transition:.3s var(--ease)}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:90;background-color:var(--color-primary);padding:calc(var(--header-h) + 2rem) 2rem 2rem;display:flex;flex-direction:column;gap:2rem;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu ul{list-style:none;margin:0;padding:0;display:grid;gap:1.2rem}
+.mobile-menu a:not(.btn){font-family:var(--font-heading);font-weight:700;font-size:2rem;color:#fff;text-decoration:none}
+.mobile-menu .crp{color:var(--color-mint);font-size:.95rem;margin-top:auto}
+@media(min-width:960px){.nav,.header-cta{display:flex;align-items:center}.burger,.mobile-menu{display:none}.brand img{height:52px}}
+/* =========================================================
+   6. HERO
+   ========================================================= */
+.hero{padding-top:calc(var(--header-h) + 3rem);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:var(--pat-creme);background-size:320px;opacity:.25;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000);mask-image:linear-gradient(90deg,transparent 30%,#000)}
+.blob{position:absolute;z-index:0;pointer-events:none}
+.hero .grid{align-items:center;position:relative;z-index:1}
+.hero-text{grid-column:1/-1}
+.hero-text .sub{font-size:1.15rem;color:var(--color-muted);max-width:560px}
+.crp-line{font-family:var(--font-heading);font-weight:500;color:var(--color-primary);font-size:.95rem;letter-spacing:.04em;margin-bottom:1.25rem}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem;margin:2rem 0}
+.badges{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}
+.badges li{display:flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem}
+.badges svg{width:26px;height:26px}
+.hero-photo{grid-column:1/-1;position:relative;max-width:420px;margin:2rem auto 0;width:100%}
+.arch{position:relative;z-index:1;aspect-ratio:4/5;border-radius:999px 999px var(--radius) var(--radius);overflow:hidden;background:var(--color-sand);border:8px solid var(--color-surface);box-shadow:var(--shadow-card);display:grid;place-items:center}
+.arch img{width:100%;height:100%;object-fit:cover}
+.photo-placeholder{text-align:center;color:var(--color-primary);font-family:var(--font-hand);font-size:1.8rem;padding:1rem}
+.photo-placeholder svg{width:90px;margin:0 auto .5rem;opacity:.9}
+.hero-photo .deco-flower{position:absolute;z-index:2;width:96px;right:-18px;bottom:40px}
+.hero-photo .deco-heart{position:absolute;z-index:2;width:38px;left:-6px;top:28%}
+@media(min-width:900px){.hero-text{grid-column:1/8}.hero-photo{grid-column:8/13;margin:0}}
+/* =========================================================
+   7. CARDS / SOBRE / SERVIÇO
+   ========================================================= */
+.card{background:var(--color-surface);border-radius:calc(var(--radius) + 8px);box-shadow:var(--shadow-card);padding:clamp(1.75rem,4vw,3rem)}
+.about-card{display:grid;gap:2rem;align-items:center}
+.about-card .arch{max-width:280px;margin-inline:auto;width:100%}
+.placeholder{background:repeating-linear-gradient(-45deg,var(--color-bg) 0 10px,#fff 10px 20px);border:2px dashed var(--color-soft);border-radius:12px;padding:1rem 1.25rem;color:var(--color-muted)}
+.flower-list{list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:.7rem}
+.flower-list li{display:flex;gap:.7rem;align-items:center}
+.flower-list svg{width:22px;height:22px;flex:none}
+@media(min-width:860px){.about-card{grid-template-columns:280px 1fr;gap:3.5rem}}
+.service{max-width:860px;margin-inline:auto;text-align:center;position:relative}
+.service .icon-wrap{width:92px;height:92px;border-radius:50%;background:var(--color-mint);display:grid;place-items:center;margin:0 auto 1.25rem}
+.service .icon-wrap svg{width:54px}
+.service p{max-width:640px;margin:0 auto 1.75rem;color:var(--color-muted)}
+.pillars{display:grid;gap:1rem;max-width:860px;margin:1.5rem auto 0}
+.pillar{border-radius:var(--radius);padding:1.4rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.pillar svg{width:38px;height:38px;flex:none}
+.pillar strong{font-family:var(--font-heading);font-weight:700;color:var(--color-primary);font-size:1.15rem;display:block}
+.pillar span{color:var(--color-text);font-size:.98rem}
+.p-rose{background:var(--color-rose)}.p-mint{background:var(--color-mint)}.p-mustard{background:var(--color-mustard-soft)}
+@media(min-width:760px){.pillars{grid-template-columns:repeat(3,1fr)}}
+/* PARA QUEM */
+.audience{display:grid;gap:1.5rem}
+.audience .card{position:relative;overflow:hidden}
+.audience .card h3{font-size:1.6rem}
+.audience .card svg.corner{position:absolute;width:96px;right:-22px;top:-22px;opacity:.85}
+.audience .card h3{padding-right:56px}
+.audience .card p{color:var(--color-muted);font-size:1.1rem;max-width:34ch;margin:0}
+.support-text{text-align:center;max-width:620px;margin:2.5rem auto 0;color:var(--color-muted)}
+@media(min-width:760px){.audience{grid-template-columns:1fr 1fr}}
+/* =========================================================
+   8. REFLEXÕES (carrossel)
+   ========================================================= */
+.reflections{overflow:hidden}
+.carousel{position:relative}
+.track{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:.5rem .25rem 1.5rem;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.quote{flex:0 0 min(84%,360px);scroll-snap-align:start;min-height:240px;border-radius:calc(var(--radius) + 6px);padding:2rem 1.75rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);display:flex;flex-direction:column;justify-content:space-between;gap:1.25rem}
+.quote p{font-family:var(--font-hand);font-weight:600;font-size:2rem;line-height:1.15;margin:0;color:#fff}
+.quote:nth-child(odd) p{color:var(--color-highlight)}
+.quote svg{width:36px}
+.car-controls{display:flex;gap:.75rem;justify-content:center;margin-top:.5rem}
+.car-btn{width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;transition:.3s var(--ease)}
+.car-btn:hover{background:#fff;color:var(--color-primary)}
+.car-btn svg{width:22px}
+/* =========================================================
+   9. FAQ
+   ========================================================= */
+.faq{max-width:820px;margin-inline:auto;display:grid;gap:.9rem}
+.faq-item{background:var(--color-surface);border-radius:var(--radius);box-shadow:var(--shadow-soft)}
+.faq-q{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.3rem 1.5rem;cursor:pointer;font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--color-primary);border-radius:var(--radius)}
+.faq-q:focus-visible{outline:3px solid var(--color-highlight)}
+.faq-q .plus{flex:none;width:34px;height:34px;border-radius:50%;background:var(--color-rose);position:relative;transition:transform .35s var(--ease),background .35s}
+.faq-q .plus::before,.faq-q .plus::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;border-radius:2px;background:var(--color-primary);transform:translate(-50%,-50%)}
+.faq-q .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-q[aria-expanded="true"] .plus{transform:rotate(45deg);background:var(--color-mint)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.faq-a>div{overflow:hidden}
+.faq-a p{padding:0 1.5rem 1.4rem;margin:0;color:var(--color-muted)}
+.faq-q[aria-expanded="true"]+.faq-a{grid-template-rows:1fr}
+/* =========================================================
+   10. REDES / CTA / CONTATO
+   ========================================================= */
+.socials{display:grid;gap:1.25rem;max-width:760px;margin-inline:auto}
+.social-card{display:flex;align-items:center;gap:1.1rem;text-decoration:none;color:var(--color-text);transition:transform .3s var(--ease)}
+.social-card:hover{transform:translateY(-4px)}
+.social-card .ic{width:60px;height:60px;border-radius:50%;background:var(--color-lilac);display:grid;place-items:center;flex:none}
+.social-card .ic svg{width:32px}
+.social-card strong{font-family:var(--font-heading);color:var(--color-primary);font-size:1.15rem;display:block}
+@media(min-width:700px){.socials{grid-template-columns:1fr 1fr}}
+.cta-final{text-align:center}
+.cta-final h2{font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:1.75rem}
+.contact-grid{display:grid;gap:1rem}
+.contact-card{display:flex;align-items:center;gap:1rem;padding:1.4rem 1.5rem;text-decoration:none;color:var(--color-text)}
+.contact-card .ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;flex:none}
+.contact-card .ic svg{width:28px}
+.contact-card small{display:block;font-family:var(--font-heading);font-weight:700;color:var(--color-primary);font-size:1rem}
+@media(min-width:700px){.contact-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+.contact-cta{text-align:center;margin-top:2.5rem}
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+.footer{background:var(--color-primary);color:#fff;padding:3.5rem 0 2rem}
+.footer-top{display:flex;flex-direction:column;gap:1.75rem;align-items:flex-start;justify-content:space-between}
+.footer img.logo-neg{height:60px;width:auto}
+.footer .id{font-family:var(--font-heading);font-weight:500;color:var(--color-mint)}
+.footer-icons{display:flex;gap:.75rem}
+.footer-icons a{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);display:grid;place-items:center;color:#fff;transition:.3s}
+.footer-icons a:hover{background:rgba(255,255,255,.12)}
+.footer-icons svg{width:24px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.18);margin-top:2.5rem;padding-top:1.5rem;font-size:.9rem;color:rgba(255,255,255,.85);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+.footer-bottom button{all:unset;cursor:pointer;text-decoration:underline;color:#fff}
+.footer-bottom button:focus-visible{outline:3px solid var(--color-highlight)}
+@media(min-width:800px){.footer-top{flex-direction:row;align-items:center}}
+/* flutuantes */
+.wa-float{position:fixed;right:1rem;bottom:1rem;z-index:80;width:60px;height:60px;border-radius:50%;background:var(--color-primary);color:#fff;display:grid;place-items:center;box-shadow:0 12px 26px -10px rgba(8,89,94,.7)}
+.wa-float svg{width:30px}
+.to-top{position:fixed;right:1rem;bottom:5.25rem;z-index:80;width:48px;height:48px;border-radius:50%;border:0;background:var(--color-surface);color:var(--color-primary);box-shadow:var(--shadow-card);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:.35s var(--ease)}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top svg{width:22px}
+@media(min-width:960px){.wa-float{display:none}.to-top{bottom:1.5rem;right:1.5rem}}
+/* modal privacidade */
+dialog{border:0;border-radius:calc(var(--radius) + 6px);padding:0;max-width:640px;width:calc(100% - 2rem);box-shadow:var(--shadow-card);color:var(--color-text)}
+dialog::backdrop{background:rgba(6,69,73,.55)}
+dialog .inner{padding:2rem;max-height:80vh;overflow:auto}
+dialog h2{font-size:1.6rem}
+dialog h3{font-size:1.05rem;margin-top:1.25rem}
+.close-x{float:right;border:0;background:var(--color-rose);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.3rem;color:var(--color-primary)}
+/* =========================================================
+   12. ANIMAÇÕES DE ENTRADA
+   ========================================================= */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+.float{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .loader{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- =======================================================
+     SÍMBOLOS SVG REUTILIZÁVEIS (traço "à mão")
+     ======================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- pétala rabiscada: duas voltas ligeiramente diferentes -->
+    <g id="petal" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 0C-15-18-16-44-2-52C13-47 16-20 1 1" stroke-width="3.2"/>
+      <path d="M1 -2C-12-20-12-42 0-49C10-44 12-22 -1 0" stroke-width="2" opacity=".75"/>
+      <path d="M-1 1C-17-15-14-47 1-54" stroke-width="1.4" opacity=".5"/>
+    </g>
+    <!-- flor de 5 pétalas (cores da marca) -->
+    <g id="flower">
+      <g transform="translate(60 62)">
+        <use href="#petal" stroke="#AD82AA" transform="rotate(-8)"/>
+        <use href="#petal" stroke="#EDB22B" transform="rotate(64)"/>
+        <use href="#petal" stroke="#08595E" transform="rotate(140)"/>
+        <use href="#petal" stroke="#08595E" transform="rotate(212)"/>
+        <use href="#petal" stroke="#EA7A66" transform="rotate(284)"/>
+      </g>
+    </g>
+    <!-- flor monocromática (usa currentColor) -->
+    <g id="flower-mono" stroke="currentColor">
+      <g transform="translate(60 62)">
+        <use href="#petal" transform="rotate(-8)"/><use href="#petal" transform="rotate(64)"/>
+        <use href="#petal" transform="rotate(140)"/><use href="#petal" transform="rotate(212)"/>
+        <use href="#petal" transform="rotate(284)"/>
+      </g>
+    </g>
+    <g id="sparkle" fill="none" stroke-linecap="round" stroke-width="3.4">
+      <path d="M6 20C8 14 9 10 10 4"/><path d="M14 22C18 18 21 15 25 12"/><path d="M2 26C0 22-2 19-5 16"/>
+    </g>
+    <g id="heart" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+      <path d="M20 36C10 28 3 20 4 12C5 5 13 3 18 10C21 3 31 2 34 9C37 17 29 27 20 36Z"/>
+      <path d="M19 33C11 26 6 19 7 13" stroke-width="1.6" opacity=".6"/>
+    </g>
+    <g id="asterisk" fill="none" stroke-linecap="round" stroke-width="3.2">
+      <path d="M15 3C15 11 16 19 15 27"/><path d="M4 9C11 13 19 17 26 21"/><path d="M26 9C19 13 11 17 4 21"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- Tela de carregamento -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg viewBox="0 0 120 124" class="draw">
+    <g transform="translate(60 62)">
+      <g><use href="#petal" stroke="#AD82AA" transform="rotate(-8)"/></g>
+      <g><use href="#petal" stroke="#EDB22B" transform="rotate(64)"/></g>
+      <g><use href="#petal" stroke="#08595E" transform="rotate(140)"/></g>
+      <g><use href="#petal" stroke="#08595E" transform="rotate(212)"/></g>
+      <g><use href="#petal" stroke="#EA7A66" transform="rotate(284)"/></g>
+    </g>
+  </svg>
+</div>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<!-- =======================================================
+     CABEÇALHO
+     ======================================================= -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="#inicio" class="brand" aria-label="Gabrieli Froehner, psicóloga — início">
+      <!-- EDITAR: arquivo do logo horizontal (mesma pasta do index.html) -->
+      <img src="logo-horizontal.png" alt="Gabrieli Froehner, psicóloga" width="230" height="104" onerror="this.replaceWith(document.getElementById('tpl-logo').content.cloneNode(true))">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#sobre">sobre</a></li>
+        <li><a href="#servicos">serviços</a></li>
+        <li><a href="#reflexoes">reflexões</a></li>
+        <li><a href="#faq">faq</a></li>
+        <li><a href="#contato">contato</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta js-wa" href="#" target="_blank" rel="noopener">Agendar</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+  </div>
+</header>
+<template id="tpl-logo"><span class="logo-fallback"><b>gabrieli froehner</b><span>psicóloga</span></span></template>
+
+<div class="mobile-menu pattern-green" id="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="#sobre">sobre</a></li>
+    <li><a href="#servicos">serviços</a></li>
+    <li><a href="#reflexoes">reflexões</a></li>
+    <li><a href="#faq">faq</a></li>
+    <li><a href="#contato">contato</a></li>
+  </ul>
+  <a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+  <p class="crp">Gabrieli Froehner · Psicóloga · <span class="js-crp">CRP 00/00000</span></p>
+</div>
+
+<main id="conteudo">
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+<section class="hero" id="inicio">
+  <svg class="blob" style="width:520px;left:-220px;top:40px" viewBox="0 0 200 200" aria-hidden="true"><path fill="#DCEBE8" opacity=".6" d="M44 -58C58 -46 70 -30 72 -12C75 6 68 25 56 42C43 59 25 74 4 72C-17 71-40 53-55 34C-70 15-77-6-71-25C-64-43-45-58-26-68C-7-78 13-82 29-75Z" transform="translate(100 100)"/></svg>
+  <div class="container grid">
+    <div class="hero-text">
+      <span class="hand reveal">um espaço para florescer</span>
+      <h1 class="reveal d1">Um espaço seguro para você se escutar.</h1>
+      <p class="crp-line reveal d1">Gabrieli Froehner · Psicóloga · <span class="js-crp">CRP 00/00000</span><!-- EDITAR: CRP --></p>
+      <p class="sub reveal d2">Psicoterapia online em Terapia Cognitivo-Comportamental (TCC) para adolescentes a partir de 17 anos e adultos. Acolhimento especial para mulheres e pessoas LGBTQIAP+.</p>
+      <div class="actions reveal d2">
+        <a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6"/></svg>
+          Agende sua primeira conversa</a>
+        <a class="btn btn-outline" href="#servicos">Conheça o serviço</a>
+      </div>
+      <ul class="badges reveal d3" aria-label="Informações do atendimento">
+        <li><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><rect x="4" y="7" width="24" height="16" rx="4" stroke="#08595E"/><path d="M12 27h8" stroke="#08595E"/><circle cx="16" cy="15" r="3" stroke="#AD82AA"/></svg>100% online</li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M16 4.5c6.5.2 11.4 5 11.3 11.6-.2 6.4-5.3 11.4-11.6 11.4C9.4 27.4 4.5 22.4 4.6 16 4.8 9.4 9.6 4.6 16 4.5z" stroke="#08595E"/><path d="M16 9.5V16l4 2.5" stroke="#EA7A66"/></svg>Sessões de 50 minutos</li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M16 4c3.5 2.2 7 3 10 3 .3 9-3 16-10 21C9 23 5.7 16 6 7c3 0 6.5-.8 10-3z" stroke="#08595E"/><path d="M11.5 16l3 3 6-6" stroke="#EDB22B"/></svg>Sigilo e ética profissional</li>
+      </ul>
+    </div>
+    <div class="hero-photo reveal d2">
+      <svg class="blob" style="width:135%;left:-18%;top:-6%" viewBox="0 0 200 200" aria-hidden="true"><path fill="#F9E1DA" d="M48 -62C61 -50 70 -33 74 -15C78 4 76 24 65 38C54 53 35 62 15 68C-5 73-26 75-43 66C-60 57-72 37-75 17C-78-4-71-25-58-39C-45-53-25-60-6-63C14-66 34-73 48-62Z" transform="translate(100 100)"/></svg>
+      <div class="arch">
+        <!-- EDITAR: foto da psicóloga — troque o bloco abaixo por:
+             <img src="foto-gabrieli.jpg" alt="Gabrieli Froehner, psicóloga, sorrindo em ambiente acolhedor"> -->
+        <div class="photo-placeholder" role="img" aria-label="Espaço reservado para a foto da psicóloga">
+          <svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg>
+          sua foto
+        </div>
+      </div>
+      <svg class="deco-flower float" viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco-heart" viewBox="0 0 40 40" stroke="#EA7A66" aria-hidden="true"><use href="#heart"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     SOBRE
+     ======================================================= -->
+<section class="bg-sand" id="sobre">
+  <div class="container">
+    <div class="card about-card reveal">
+      <div class="arch" style="aspect-ratio:3/4">
+        <!-- EDITAR: segunda foto (ou a mesma). Troque por <img src="foto-sobre.jpg" alt="..."> -->
+        <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto">
+          <svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg>sua foto
+        </div>
+      </div>
+      <div>
+        <span class="hand">quem está do outro lado</span>
+        <h2>Prazer, Gabrieli</h2>
+        <!-- EDITAR: texto da seção "Sobre" (apresentação pessoal) -->
+        <p class="placeholder">[Em breve: aqui vai a sua história]</p>
+        <!-- EDITAR: formação acadêmica e cursos -->
+        <ul class="flower-list">
+          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span>[Formação]</span></li>
+          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span>[Pós-graduação]</span></li>
+          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span>[Cursos]</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     SERVIÇO (um único card)
+     ======================================================= -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="hand">atendimentos</span>
+      <h2>Onde posso ajudar</h2>
+    </div>
+    <article class="card service reveal d1">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 60 60" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" aria-hidden="true">
+          <path d="M9 14.5c13.8-.8 28-.6 42 .2.8 7.5.8 15.6-.2 23-14 .7-28 .6-41.6-.2-.9-7.6-1-15.4-.2-23z" stroke="#08595E"/>
+          <path d="M22 46c5.4-.4 11-.3 16 .2M30 38.5v7" stroke="#08595E"/>
+          <path d="M30 31c-4.2-3-6.8-5.2-6.4-8 .3-2.5 3.6-3.3 6.2-.4 2.4-2.8 6-2 6.3.6.3 2.6-2 5-6.1 7.8z" stroke="#AD82AA"/>
+        </svg>
+      </div>
+      <h3>Psicoterapia individual</h3>
+      <p>Atendimento online para adolescentes a partir de 17 anos e adultos, na abordagem Terapia Cognitivo-Comportamental (TCC). Sessões de 50 minutos, com frequência semanal combinada. Um espaço de escuta acolhedora e sem julgamentos, com cuidado especial para mulheres e pessoas LGBTQIAP+.</p>
+      <a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">Quero agendar</a>
+    </article>
+    <div class="pillars">
+      <div class="pillar p-rose reveal d1"><svg viewBox="0 0 40 40" stroke="#08595E" aria-hidden="true"><use href="#heart"/></svg><div><strong>Escuta</strong><span>sem julgamentos</span></div></div>
+      <div class="pillar p-mint reveal d2"><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><div><strong>Vínculo</strong><span>confiança mútua</span></div></div>
+      <div class="pillar p-mustard reveal d3"><svg viewBox="-6 0 36 30" stroke="#08595E" aria-hidden="true"><use href="#sparkle"/></svg><div><strong>Processo</strong><span>no seu tempo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PARA QUEM É
+     ======================================================= -->
+<section class="bg-lilac">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="hand">para quem é</span>
+      <h2>Um espaço pensado para você</h2>
+    </div>
+    <div class="audience">
+      <article class="card reveal d1">
+        <svg class="corner" viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg>
+        <h3>Mulheres</h3>
+        <p>Para quem carrega muito, cobra demais de si e merece um lugar para respirar.</p>
+      </article>
+      <article class="card reveal d2">
+        <svg class="corner" viewBox="0 0 40 40" stroke="#EA7A66" aria-hidden="true"><use href="#heart"/></svg>
+        <h3>Pessoas LGBTQIAP+</h3>
+        <p>Um lugar onde você não precisa se justificar. Aqui, há espaço para você ser quem é.</p>
+      </article>
+    </div>
+    <p class="support-text reveal">Um ambiente seguro, respeitoso e livre de julgamentos, onde a sua história é recebida com cuidado e no seu ritmo.</p>
+  </div>
+</section>
+
+<!-- =======================================================
+     REFLEXÕES (carrossel)
+     ======================================================= -->
+<section class="on-dark pattern-green reflections" id="reflexoes" aria-roledescription="carrossel" aria-label="Reflexões">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="hand">pausa para respirar</span>
+      <h2>Reflexões fazem o seu caminho</h2>
+    </div>
+    <div class="carousel reveal d1">
+      <div class="track" id="track" tabindex="0" aria-label="Frases de reflexão; use as setas para navegar">
+        <!-- frases geradas pelo JS a partir de CONFIG.reflexoes -->
+      </div>
+      <div class="car-controls">
+        <button class="car-btn" id="prev" aria-label="Reflexão anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="car-btn" id="next" aria-label="Próxima reflexão"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem"><a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">Vamos conversar?</a></div>
+  </div>
+</section>
+
+<!-- =======================================================
+     FAQ
+     ======================================================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="hand">antes de agendar</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq reveal d1" id="faq-list">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Qual é a sua abordagem?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Trabalho com Terapia Cognitivo-Comportamental (TCC), uma abordagem que busca compreender a relação entre pensamentos, emoções e comportamentos, com foco em construir estratégias práticas para lidar com o que pesa, no ritmo de cada pessoa.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Você atende pessoas LGBTQIAP+ e mulheres?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Sim. Meu atendimento tem foco nesses públicos, em um ambiente seguro, respeitoso e sem julgamentos.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Como funciona o atendimento online?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>As sessões acontecem por videochamada, com duração de 50 minutos, em frequência semanal combinada. Você só precisa de um local reservado e uma boa conexão.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">A partir de que idade você atende?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>A partir dos 17 anos.<!-- EDITAR: incluir observação sobre autorização de responsáveis para menores de 18 anos, conforme orientação do CRP. --></p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Quanto tempo dura a terapia?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Não existe um tempo exato. Depende da sua demanda, dos seus objetivos e do seu ritmo.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Meus dados e o que falo em sessão são sigilosos?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Sim. O sigilo é um dos pilares da prática profissional e é regido pelo Código de Ética Profissional do Psicólogo e pela LGPD.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Atende convênio?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p class="js-convenio">[CONFIRMAR: resposta sobre convênio]</p><!-- EDITAR: resposta sobre convênio (também em CONFIG.convenio no JS) --></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Como faço para agendar?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Clique no botão de WhatsApp para conversarmos e combinarmos o melhor horário.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     REDES SOCIAIS
+     ======================================================= -->
+<section class="bg-sand" style="padding-top:clamp(3.5rem,7vw,5.5rem);padding-bottom:clamp(3.5rem,7vw,5.5rem)">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="hand">vamos seguir juntas</span>
+      <h2>Continue por aqui</h2>
+    </div>
+    <div class="socials">
+      <a class="card social-card reveal d1 js-ig" href="#" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><path d="M10 5.5c4-.4 8-.4 12 0 3.4.4 5 2.2 5.4 5.4.4 3.4.4 6.8 0 10.2-.4 3.2-2 5-5.4 5.4-4 .4-8 .4-12 0-3.4-.4-5-2.2-5.4-5.4-.4-3.4-.4-6.8 0-10.2.4-3.2 2-5 5.4-5.4z" stroke="#08595E"/><circle cx="16" cy="16" r="5" stroke="#08595E"/><circle cx="22.6" cy="9.6" r=".6" stroke="#EA7A66" stroke-width="2"/></svg></span>
+        <span><strong>Instagram</strong><span class="js-ig-handle">@gabrielifroehner</span></span>
+      </a>
+      <!-- EDITAR: LinkedIn — se ainda não existir, remova este card inteiro -->
+      <a class="card social-card reveal d2 js-li" href="#" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><path d="M7 5.5c6-.4 12-.4 18 0 1.2.1 1.5 1 1.5 2 .2 5.6.2 11.4 0 17 0 1.1-.4 1.8-1.5 2-6 .4-12 .4-18 0-1.1-.1-1.5-.9-1.5-2-.2-5.6-.2-11.4 0-17 0-1 .4-1.9 1.5-2z" stroke="#08595E"/><path d="M11 14v8M11 10v.2" stroke="#08595E"/><path d="M16 22v-8m0 4c0-2.4 1.4-4 3.3-4S22 15.4 22 18v4" stroke="#AD82AA"/></svg></span>
+        <span><strong>LinkedIn</strong><span>[seu perfil]</span></span>
+      </a>
+    </div>
+    <!-- OPCIONAL: "Perfil no Google" — ative somente quando houver avaliações reais no Google.
+    <div style="text-align:center;margin-top:2rem">
+      <a class="btn btn-outline" href="https://g.page/SEU-PERFIL" target="_blank" rel="noopener">Ver meu perfil no Google</a>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- =======================================================
+     CTA FINAL
+     ======================================================= -->
+<section class="on-dark pattern-green cta-final">
+  <div class="container reveal">
+    <span class="hand">o primeiro passo é o mais bonito</span>
+    <h2>Vamos começar essa conversa?</h2>
+    <a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6"/></svg>
+      Agendar pelo WhatsApp</a>
+  </div>
+</section>
+
+<!-- =======================================================
+     CONTATO
+     ======================================================= -->
+<section id="contato">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="hand">fale comigo</span>
+      <h2>Contato</h2>
+    </div>
+    <div class="contact-grid">
+      <a class="card contact-card reveal js-wa" href="#" target="_blank" rel="noopener"><span class="ic" style="background:var(--color-mint)"><svg viewBox="0 0 24 24" fill="none" stroke="#08595E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6" stroke="#EA7A66"/></svg></span><span><small>WhatsApp</small><span class="js-phone">(00) 00000-0000</span></span></a>
+      <a class="card contact-card reveal d1 js-mail" href="#"><span class="ic" style="background:var(--color-rose)"><svg viewBox="0 0 24 24" fill="none" stroke="#08595E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5c5.6-.4 11.4-.4 17 0 .4 3.7.4 7.3 0 11-5.6.4-11.4.4-17 0-.4-3.7-.4-7.3 0-11z"/><path d="M4 7l8 6 8-6" stroke="#EA7A66"/></svg></span><span><small>E-mail</small><span class="js-email" style="word-break:break-all">contato@gabrielifroehner.com.br</span></span></a>
+      <a class="card contact-card reveal d2 js-ig" href="#" target="_blank" rel="noopener"><span class="ic" style="background:var(--color-lilac)"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-width="2.2" aria-hidden="true"><path d="M10 5.5c4-.4 8-.4 12 0 3.4.4 5 2.2 5.4 5.4.4 3.4.4 6.8 0 10.2-.4 3.2-2 5-5.4 5.4-4 .4-8 .4-12 0-3.4-.4-5-2.2-5.4-5.4-.4-3.4-.4-6.8 0-10.2.4-3.2 2-5 5.4-5.4z" stroke="#08595E"/><circle cx="16" cy="16" r="5" stroke="#AD82AA"/></svg></span><span><small>Instagram</small><span class="js-ig-handle">@gabrielifroehner</span></span></a>
+      <div class="card contact-card reveal"><span class="ic" style="background:var(--color-mustard-soft)"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><rect x="4" y="7" width="24" height="16" rx="4" stroke="#08595E"/><path d="M12 27h8" stroke="#08595E"/><circle cx="16" cy="15" r="3" stroke="#EA7A66"/></svg></span><span><small>Atendimento 100% online</small>Por videochamada, de onde você estiver</span></div>
+      <div class="card contact-card reveal d1"><span class="ic" style="background:var(--color-mint)"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><path d="M16 4.5c6.5.2 11.4 5 11.3 11.6-.2 6.4-5.3 11.4-11.6 11.4C9.4 27.4 4.5 22.4 4.6 16 4.8 9.4 9.6 4.6 16 4.5z" stroke="#08595E"/><path d="M16 9.5V16l4 2.5" stroke="#AD82AA"/></svg></span><span><small>Resposta em até 24h úteis</small>Respondo com calma e atenção</span></div>
+    </div>
+    <div class="contact-cta reveal"><a class="btn btn-primary js-wa" href="#" target="_blank" rel="noopener">Conversar pelo WhatsApp</a></div>
+  </div>
+</section>
+</main>
+
+<!-- =======================================================
+     RODAPÉ
+     ======================================================= -->
+<div class="pattern-strip" aria-hidden="true"></div>
+<footer class="footer pattern-green">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <!-- EDITAR: arquivo do logo negativo (branco) -->
+        <img class="logo-neg" src="logo-negativo.png" alt="Gabrieli Froehner, psicóloga" width="200" height="90" onerror="this.replaceWith(document.getElementById('tpl-logo').content.cloneNode(true))">
+        <p class="id" style="margin:1rem 0 0">Gabrieli Froehner · Psicóloga · <span class="js-crp">CRP 00/00000</span></p>
+      </div>
+      <div class="footer-icons">
+        <a class="js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 5.5c4-.4 8-.4 12 0 3.4.4 5 2.2 5.4 5.4.4 3.4.4 6.8 0 10.2-.4 3.2-2 5-5.4 5.4-4 .4-8 .4-12 0-3.4-.4-5-2.2-5.4-5.4-.4-3.4-.4-6.8 0-10.2.4-3.2 2-5 5.4-5.4z"/><circle cx="16" cy="16" r="5"/></svg></a>
+        <a class="js-li" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><!-- EDITAR: remova se não usar LinkedIn --><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M11 14v8M11 10v.2M16 22v-8m0 4c0-2.4 1.4-4 3.3-4S22 15.4 22 18v4"/><rect x="5.5" y="5.5" width="21" height="21" rx="4"/></svg></a>
+        <a class="js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6"/></svg></a>
+        <a class="js-mail" href="#" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5c5.6-.4 11.4-.4 17 0 .4 3.7.4 7.3 0 11-5.6.4-11.4.4-17 0-.4-3.7-.4-7.3 0-11z"/><path d="M4 7l8 6 8-6"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0">© 2026 Gabrieli Froehner. Todos os direitos reservados. Conteúdo informativo, não substitui atendimento psicológico.</p>
+      <button type="button" id="open-privacy">Política de privacidade</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Flutuantes -->
+<a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6"/></svg></a>
+<button class="to-top" id="to-top" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+
+<!-- Política de privacidade (LGPD) -->
+<dialog id="privacy" aria-labelledby="privacy-title">
+  <div class="inner">
+    <button class="close-x" id="close-privacy" aria-label="Fechar">×</button>
+    <h2 id="privacy-title">Política de privacidade</h2>
+    <p>Este site é apenas informativo. Ele não possui formulários e não coleta dados pessoais de forma automática além do necessário para funcionar.</p>
+    <h3>Contato pelo WhatsApp, e-mail ou Instagram</h3>
+    <p>Quando você entra em contato, as informações que você compartilha (como nome e telefone) são usadas exclusivamente para responder e organizar o atendimento, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018).</p>
+    <h3>Sigilo profissional</h3>
+    <p>Tudo o que é compartilhado em atendimento é protegido pelo sigilo previsto no Código de Ética Profissional do Psicólogo.</p>
+    <h3>Seus direitos</h3>
+    <p>Você pode solicitar, a qualquer momento, acesso, correção ou exclusão dos seus dados pelo e-mail <a class="js-mail js-email" href="#">contato@gabrielifroehner.com.br</a>.</p>
+    <!-- EDITAR: se adicionar formulário, inclua junto dele o aviso:
+         "Ao enviar, você concorda com o uso dos seus dados apenas para retorno do contato, conforme a LGPD e nossa Política de privacidade." -->
+  </div>
+</dialog>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — EDITAR AQUI
+   ========================================================= */
+const CONFIG = {
+  crp: 'CRP 00/00000',                                   // EDITAR: nº do CRP
+  whatsapp: '5500000000000',                             // EDITAR: DDI+DDD+número, só dígitos (ex.: 5547999999999)
+  whatsappExibicao: '(00) 00000-0000',                   // EDITAR: número como aparece no site
+  whatsappMensagem: 'Olá, Gabrieli! Vim pelo seu site e gostaria de saber mais sobre a psicoterapia online.', // EDITAR
+  email: 'contato@gabrielifroehner.com.br',              // EDITAR
+  instagram: 'gabrielifroehner',                         // EDITAR: sem @
+  linkedin: 'https://www.linkedin.com/in/SEU-PERFIL',    // EDITAR (ou remova os cards de LinkedIn no HTML)
+  convenio: '[CONFIRMAR: resposta sobre convênio]',      // EDITAR: ex. "No momento, os atendimentos são particulares. Posso emitir recibo para solicitar reembolso, conforme o seu plano."
+  // Foto, logos, texto do "Sobre" e domínio (Open Graph) são trocados direto no HTML (procure por EDITAR)
+  reflexoes: [
+    'Você não precisa dar conta de tudo sozinha.',
+    'Ser quem você é não é um problema a ser resolvido.',
+    'Nem toda força faz barulho. Descansar também é cuidar de si.',
+    'Você não precisa se explicar para merecer acolhimento.',
+    'Seu tempo, sua história, seu ritmo.',
+    'Sentir demais não é fraqueza, é humanidade.',
+    'Existir como você é já é um ato de coragem.',
+    'Cuidar de si é um ato de coragem.',
+    'O primeiro passo é o mais bonito.'
+  ]
+};
+
+/* ---------- aplica configuração ---------- */
+const $ = (s, c=document) => c.querySelectorAll(s);
+const waUrl = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.whatsappMensagem)}`;
+$('.js-wa').forEach(a => a.href = waUrl);
+$('.js-mail').forEach(a => a.href = 'mailto:' + CONFIG.email);
+$('.js-email').forEach(e => e.textContent = CONFIG.email);
+$('.js-ig').forEach(a => a.href = 'https://instagram.com/' + CONFIG.instagram);
+$('.js-ig-handle').forEach(e => e.textContent = '@' + CONFIG.instagram);
+$('.js-li').forEach(a => a.href = CONFIG.linkedin);
+$('.js-crp').forEach(e => e.textContent = CONFIG.crp);
+$('.js-phone').forEach(e => e.textContent = CONFIG.whatsappExibicao);
+$('.js-convenio').forEach(e => e.textContent = CONFIG.convenio);
+
+/* ---------- patterns (flores, corações, asteriscos, brilhos) ---------- */
+function petal(c,r){return `<path transform="rotate(${r})" d="M0 0C-15-18-16-44-2-52C13-47 16-20 1 1" fill="none" stroke="${c}" stroke-width="3.2" stroke-linecap="round"/>`}
+function flower(x,y,s,cols,rot=0){const r=[-8,64,140,212,284];return `<g transform="translate(${x} ${y}) scale(${s}) rotate(${rot})">${r.map((a,i)=>petal(cols[i],a)).join('')}</g>`}
+function heart(x,y,s,c){return `<path transform="translate(${x} ${y}) scale(${s})" d="M20 36C10 28 3 20 4 12C5 5 13 3 18 10C21 3 31 2 34 9C37 17 29 27 20 36Z" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`}
+function ast(x,y,s,c){return `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="${c}" stroke-width="3.2" stroke-linecap="round"><path d="M15 3C15 11 16 19 15 27M4 9C11 13 19 17 26 21M26 9C19 13 11 17 4 21"/></g>`}
+function spark(x,y,s,c,r=0){return `<g transform="translate(${x} ${y}) scale(${s}) rotate(${r})" fill="none" stroke="${c}" stroke-width="3.4" stroke-linecap="round"><path d="M6 20C8 14 9 10 10 4M14 22C18 18 21 15 25 12M2 26C0 22-2 19-5 16"/></g>`}
+function pattern(c){
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">`+
+    flower(60,70,.45,c.f,10)+flower(220,210,.4,c.f,-20)+heart(190,40,.7,c.h)+heart(40,220,.6,c.h)+
+    ast(130,140,.7,c.a)+ast(260,90,.55,c.a)+spark(110,240,.9,c.s,20)+spark(250,10,.8,c.s,-30)+`</svg>`;
+}
+const uri = s => `url("data:image/svg+xml,${encodeURIComponent(s)}")`;
+const root = document.documentElement.style;
+root.setProperty('--pat-creme', uri(pattern({f:['#AD82AA','#EDB22B','#08595E','#08595E','#EA7A66'],h:'#EA7A66',a:'#EDB22B',s:'#08595E'})));
+const g='rgba(220,235,232,.16)';
+root.setProperty('--pat-green', uri(pattern({f:[g,g,g,g,g],h:g,a:g,s:g})));
+const sd='rgba(8,89,94,.12)';
+root.setProperty('--pat-sand', uri(pattern({f:[sd,sd,sd,sd,sd],h:sd,a:sd,s:sd})));
+
+/* ---------- loader ---------- */
+window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hide'), 1100));
+setTimeout(() => document.getElementById('loader').classList.add('hide'), 3000); // segurança
+
+/* ---------- header / topo / menu ativo ---------- */
+const header = document.getElementById('header'), toTop = document.getElementById('to-top');
+const onScroll = () => { const y = scrollY; header.classList.toggle('scrolled', y > 10); toTop.classList.toggle('show', y > 700); };
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+toTop.addEventListener('click', () => { scrollTo({top:0}); document.querySelector('.brand').focus({preventScroll:true}); });
+const navLinks = [...$('.nav a')];
+const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)); }), {rootMargin:'-45% 0px -50% 0px'});
+['sobre','servicos','reflexoes','faq','contato'].forEach(id => spy.observe(document.getElementById(id)));
+
+/* ---------- menu mobile ---------- */
+const burger = document.getElementById('burger'), menu = document.getElementById('mobile-menu');
+function setMenu(open){
+  burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menu.classList.toggle('open', open); menu.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  $('a', menu).forEach(a => a.tabIndex = open ? 0 : -1);
+  if (open) menu.querySelector('a').focus();
+}
+$('a', menu).forEach(a => { a.tabIndex = -1; a.addEventListener('click', () => setMenu(false)); });
+burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); burger.focus(); } });
+
+/* ---------- animações de entrada ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+$('.reveal').forEach(el => io.observe(el));
+
+/* ---------- FAQ (acordeão acessível) ---------- */
+$('.faq-q').forEach((b, i) => {
+  const panel = b.nextElementSibling; const id = 'faq-' + i;
+  panel.id = id; b.setAttribute('aria-controls', id); b.id = id + '-q'; panel.setAttribute('aria-labelledby', id + '-q');
+  b.addEventListener('click', () => b.setAttribute('aria-expanded', b.getAttribute('aria-expanded') !== 'true'));
+});
+
+/* ---------- carrossel de reflexões ---------- */
+const track = document.getElementById('track');
+const icons = ['<svg viewBox="0 0 40 40" stroke="#F9E1DA" aria-hidden="true"><use href="#heart"/></svg>','<svg viewBox="0 0 30 30" stroke="#EDB22B" aria-hidden="true"><use href="#asterisk"/></svg>','<svg viewBox="-6 0 36 30" stroke="#DCEBE8" aria-hidden="true"><use href="#sparkle"/></svg>'];
+track.innerHTML = CONFIG.reflexoes.map((t, i) => `<figure class="quote" role="group" aria-roledescription="slide" aria-label="${i+1} de ${CONFIG.reflexoes.length}" style="margin:0">${icons[i%3]}<p>“${t}”</p></figure>`).join('');
+const step = () => track.querySelector('.quote').offsetWidth + 20;
+const go = dir => {
+  const max = track.scrollWidth - track.clientWidth - 4;
+  if (dir > 0 && track.scrollLeft >= max) track.scrollTo({left:0});
+  else if (dir < 0 && track.scrollLeft <= 0) track.scrollTo({left:max});
+  else track.scrollBy({left: dir * step()});
+};
+document.getElementById('next').onclick = () => go(1);
+document.getElementById('prev').onclick = () => go(-1);
+track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); } });
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let paused = false, timer;
+if (!reduce) timer = setInterval(() => { if (!paused && !document.hidden) go(1); }, 5500);
+const car = document.querySelector('.carousel');
+['mouseenter','focusin','touchstart'].forEach(ev => car.addEventListener(ev, () => paused = true, {passive:true}));
+['mouseleave','focusout'].forEach(ev => car.addEventListener(ev, () => paused = false));
+
+/* ---------- política de privacidade ---------- */
+const dlg = document.getElementById('privacy');
+document.getElementById('open-privacy').onclick = () => dlg.showModal();
+document.getElementById('close-privacy').onclick = () => dlg.close();
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+</script>
+</body>
+</html>

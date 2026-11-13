@@ -1,0 +1,8 @@
+Site Gabrieli Froehner · Psicóloga
+Mantenha todos estes arquivos na mesma pasta e publique a pasta inteira (Netlify, Hostinger, GitHub Pages etc.).
+- index.html ........... o site completo
+- logo-horizontal.png .. logo do cabeçalho
+- logo-negativo.png .... logo branco do rodapé
+- favicon.png / simbolo.png ... ícone da aba e imagem de compartilhamento
+Para editar: abra o index.html num editor de texto e procure por "EDITAR".
+Os dados de contato ficam todos juntos no bloco CONFIG, no final do arquivo.
