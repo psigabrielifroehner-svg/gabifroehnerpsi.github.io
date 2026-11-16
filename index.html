@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- EDITAR: título, descrição e domínio (og:url / og:image) -->
 <title>Gabrieli Froehner · Psicóloga | Psicoterapia online em TCC</title>
-<meta name="description" content="Psicoterapia online em Terapia Cognitivo-Comportamental (TCC) para adolescentes a partir de 17 anos e adultos. Acolhimento especial para mulheres e pessoas LGBTQIAP+. Gabrieli Froehner, Psicóloga, CRP 00/00000.">
+<meta name="description" content="Psicoterapia online em Terapia Cognitivo-Comportamental (TCC) para pessoas a partir de 18 anos. Acolhimento especial para mulheres e pessoas LGBTQIAP+. Gabrieli Froehner, Psicóloga, CRP 00/00000.">
 <meta name="author" content="Gabrieli Froehner">
 <meta name="theme-color" content="#08595E">
 <link rel="canonical" href="https://gabrielifroehner.com.br/"><!-- EDITAR: domínio -->
@@ -159,6 +159,7 @@ section{position:relative;padding:clamp(4.5rem,9vw,7.5rem) 0}
 .card{background:var(--color-surface);border-radius:calc(var(--radius) + 8px);box-shadow:var(--shadow-card);padding:clamp(1.75rem,4vw,3rem)}
 .about-card{display:grid;gap:2rem;align-items:center}
 .about-card .arch{max-width:280px;margin-inline:auto;width:100%}
+.about-text p{color:var(--color-muted)}
 .placeholder{background:repeating-linear-gradient(-45deg,var(--color-bg) 0 10px,#fff 10px 20px);border:2px dashed var(--color-soft);border-radius:12px;padding:1rem 1.25rem;color:var(--color-muted)}
 .flower-list{list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:.7rem}
 .flower-list li{display:flex;gap:.7rem;align-items:center}
@@ -168,6 +169,15 @@ section{position:relative;padding:clamp(4.5rem,9vw,7.5rem) 0}
 .service .icon-wrap{width:92px;height:92px;border-radius:50%;background:var(--color-mint);display:grid;place-items:center;margin:0 auto 1.25rem}
 .service .icon-wrap svg{width:54px}
 .service p{max-width:640px;margin:0 auto 1.75rem;color:var(--color-muted)}
+.service-intro{font-weight:700;color:var(--color-primary)!important;margin-bottom:1rem!important}
+.service-list{max-width:680px;margin:0 auto 2rem;text-align:left;display:grid;gap:.75rem;padding-left:1.4rem;color:var(--color-muted)}
+.service-list li::marker{color:var(--color-accent)}
+.online-info{max-width:860px;margin:1.5rem auto 0;display:flex;align-items:flex-start;gap:1.1rem;background:var(--color-mint);border-radius:calc(var(--radius) + 4px);padding:1.5rem 1.75rem;box-shadow:var(--shadow-soft)}
+.online-info .ic{width:54px;height:54px;border-radius:50%;background:var(--color-surface);display:grid;place-items:center;flex:none}
+.online-info .ic svg{width:30px}
+.online-info strong{font-family:var(--font-heading);font-size:1.2rem;color:var(--color-primary);display:block;margin-bottom:.25rem}
+.online-info p{margin:0;color:var(--color-muted)}
+@media(max-width:520px){.online-info{flex-direction:column}}
 .pillars{display:grid;gap:1rem;max-width:860px;margin:1.5rem auto 0}
 .pillar{border-radius:var(--radius);padding:1.4rem 1.5rem;display:flex;align-items:center;gap:1rem}
 .pillar svg{width:38px;height:38px;flex:none}
@@ -217,13 +227,12 @@ section{position:relative;padding:clamp(4.5rem,9vw,7.5rem) 0}
 /* =========================================================
    10. REDES / CTA / CONTATO
    ========================================================= */
-.socials{display:grid;gap:1.25rem;max-width:760px;margin-inline:auto}
+.socials{display:grid;gap:1.25rem;max-width:380px;margin-inline:auto}
 .social-card{display:flex;align-items:center;gap:1.1rem;text-decoration:none;color:var(--color-text);transition:transform .3s var(--ease)}
 .social-card:hover{transform:translateY(-4px)}
 .social-card .ic{width:60px;height:60px;border-radius:50%;background:var(--color-lilac);display:grid;place-items:center;flex:none}
 .social-card .ic svg{width:32px}
 .social-card strong{font-family:var(--font-heading);color:var(--color-primary);font-size:1.15rem;display:block}
-@media(min-width:700px){.socials{grid-template-columns:1fr 1fr}}
 .cta-final{text-align:center}
 .cta-final h2{font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:1.75rem}
 .contact-grid{display:grid;gap:1rem}
@@ -386,7 +395,7 @@ dialog h3{font-size:1.05rem;margin-top:1.25rem}
       <span class="hand reveal">um espaço para florescer</span>
       <h1 class="reveal d1">Um espaço seguro para você se escutar.</h1>
       <p class="crp-line reveal d1">Gabrieli Froehner · Psicóloga · <span class="js-crp">CRP 00/00000</span><!-- EDITAR: CRP --></p>
-      <p class="sub reveal d2">Psicoterapia online em Terapia Cognitivo-Comportamental (TCC) para adolescentes a partir de 17 anos e adultos. Acolhimento especial para mulheres e pessoas LGBTQIAP+.</p>
+      <p class="sub reveal d2">Psicoterapia online em Terapia Cognitivo-Comportamental (TCC) para pessoas a partir de 18 anos. Acolhimento especial para mulheres e pessoas LGBTQIAP+.</p>
       <div class="actions reveal d2">
         <a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6"/></svg>
@@ -417,18 +426,17 @@ dialog h3{font-size:1.05rem;margin-top:1.25rem}
   <div class="container">
     <div class="card about-card reveal">
       <div class="arch" style="aspect-ratio:3/4">
-        <img src="https://i.imgur.com/PxMSnnI.jpeg" alt="Gabrieli Froehner, psicóloga">
+        <img src="https://i.imgur.com/HTAthQf.jpeg" alt="Gabrieli Froehner, psicóloga">
       </div>
-      <div>
+      <div class="about-text">
         <span class="hand">quem está do outro lado</span>
         <h2>Prazer, Gabrieli</h2>
-        <!-- EDITAR: texto da seção "Sobre" (apresentação pessoal) -->
-        <p class="placeholder">[Em breve: aqui vai a sua história]</p>
-        <!-- EDITAR: formação acadêmica e cursos -->
+        <p>Sempre me encantei pelas histórias que cada pessoa carrega e pela coragem que existe no ato de olhar para dentro. Escolhi a Psicologia porque acredito que ninguém precisa atravessar momentos difíceis ou dúvidas sozinho.</p>
+        <p>Trabalho com a Terapia Cognitivo-Comportamental (TCC) de forma próxima, prática e colaborativa, respeitando a singularidade e o tempo de quem chega até mim. Aqui, você não precisa se moldar ou se justificar: meu compromisso é caminhar ao seu lado para que você encontre clareza, autonomia e espaço para florescer.</p>
+        <p>Meu propósito é oferecer um espaço seguro para que você, especialmente mulheres e pessoas LGBTQIAP+, possa se compreender melhor, acolher a própria história e construir caminhos mais leves no seu dia a dia.</p>
         <ul class="flower-list">
-          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span>[Formação]</span></li>
-          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span>[Pós-graduação]</span></li>
-          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span>[Cursos]</span></li>
+          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span><strong>Formação:</strong> Graduada em Psicologia pelas Faculdades Pequeno Príncipe (Curitiba/PR).</span></li>
+          <li><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><span><strong>Pós-graduação:</strong> Pós-graduanda em Terapia Cognitivo-Comportamental (TCC) na PUCRS.</span></li>
         </ul>
       </div>
     </div>
@@ -453,9 +461,22 @@ dialog h3{font-size:1.05rem;margin-top:1.25rem}
         </svg>
       </div>
       <h3>Psicoterapia individual</h3>
-      <p>Atendimento online para adolescentes a partir de 17 anos e adultos, na abordagem Terapia Cognitivo-Comportamental (TCC). Sessões de 50 minutos, com frequência semanal combinada. Um espaço de escuta acolhedora e sem julgamentos, com cuidado especial para mulheres e pessoas LGBTQIAP+.</p>
+      <p class="service-intro">A psicoterapia pode te ajudar a:</p>
+      <ul class="service-list">
+        <li>Fortalecer a sua autoconfiança e se sentir mais segura para ser quem você é</li>
+        <li>Construir relações mais saudáveis, recíprocas e respeitosas</li>
+        <li>Comunicar o que você pensa e sente com mais clareza e sem culpa</li>
+        <li>Acolher e lidar melhor com as suas emoções e pensamentos no dia a dia</li>
+        <li>Atravessar e elaborar processos de luto, rupturas e mudanças</li>
+        <li>Organizar metas e dar passos concretos em direção aos seus objetivos</li>
+        <li>Compreender seus medos e inseguranças para não deixar que eles te paralisem</li>
+      </ul>
       <a class="btn btn-accent js-wa" href="#" target="_blank" rel="noopener">Quero agendar</a>
     </article>
+    <div class="online-info reveal d2">
+      <span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><rect x="4" y="7" width="24" height="16" rx="4" stroke="#08595E"/><path d="M12 27h8" stroke="#08595E"/><circle cx="16" cy="15" r="3" stroke="#EA7A66"/></svg></span>
+      <div><strong>Atendimento Online</strong><p>A psicoterapia online acontece através de plataforma de videochamada, onde a profissional oferece um local reservado e protegido para preservar o sigilo das informações, conforme orienta o Conselho Federal de Psicologia.</p></div>
+    </div>
     <div class="pillars">
       <div class="pillar p-rose reveal d1"><svg viewBox="0 0 40 40" stroke="#08595E" aria-hidden="true"><use href="#heart"/></svg><div><strong>Escuta</strong><span>sem julgamentos</span></div></div>
       <div class="pillar p-mint reveal d2"><svg viewBox="0 0 120 124" aria-hidden="true"><use href="#flower"/></svg><div><strong>Vínculo</strong><span>confiança mútua</span></div></div>
@@ -524,10 +545,9 @@ dialog h3{font-size:1.05rem;margin-top:1.25rem}
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Qual é a sua abordagem?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Trabalho com Terapia Cognitivo-Comportamental (TCC), uma abordagem que busca compreender a relação entre pensamentos, emoções e comportamentos, com foco em construir estratégias práticas para lidar com o que pesa, no ritmo de cada pessoa.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Você atende pessoas LGBTQIAP+ e mulheres?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Sim. Meu atendimento tem foco nesses públicos, em um ambiente seguro, respeitoso e sem julgamentos.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Como funciona o atendimento online?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>As sessões acontecem por videochamada, com duração de 50 minutos, em frequência semanal combinada. Você só precisa de um local reservado e uma boa conexão.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">A partir de que idade você atende?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>A partir dos 17 anos.<!-- EDITAR: incluir observação sobre autorização de responsáveis para menores de 18 anos, conforme orientação do CRP. --></p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">A partir de que idade você atende?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>A partir dos 18 anos.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Quanto tempo dura a terapia?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Não existe um tempo exato. Depende da sua demanda, dos seus objetivos e do seu ritmo.</p></div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Meus dados e o que falo em sessão são sigilosos?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Sim. O sigilo é um dos pilares da prática profissional e é regido pelo Código de Ética Profissional do Psicólogo e pela LGPD.</p></div></div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false">Atende convênio?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p class="js-convenio">[CONFIRMAR: resposta sobre convênio]</p><!-- EDITAR: resposta sobre convênio (também em CONFIG.convenio no JS) --></div></div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false">Como faço para agendar?<span class="plus" aria-hidden="true"></span></button><div class="faq-a" role="region"><div><p>Clique no botão de WhatsApp para conversarmos e combinarmos o melhor horário.</p></div></div></div>
     </div>
   </div>
@@ -546,11 +566,6 @@ dialog h3{font-size:1.05rem;margin-top:1.25rem}
       <a class="card social-card reveal d1 js-ig" href="#" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><path d="M10 5.5c4-.4 8-.4 12 0 3.4.4 5 2.2 5.4 5.4.4 3.4.4 6.8 0 10.2-.4 3.2-2 5-5.4 5.4-4 .4-8 .4-12 0-3.4-.4-5-2.2-5.4-5.4-.4-3.4-.4-6.8 0-10.2.4-3.2 2-5 5.4-5.4z" stroke="#08595E"/><circle cx="16" cy="16" r="5" stroke="#08595E"/><circle cx="22.6" cy="9.6" r=".6" stroke="#EA7A66" stroke-width="2"/></svg></span>
         <span><strong>Instagram</strong><span class="js-ig-handle">@psi.gabifroehner</span></span>
-      </a>
-      <!-- EDITAR: LinkedIn — se ainda não existir, remova este card inteiro -->
-      <a class="card social-card reveal d2 js-li" href="#" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><path d="M7 5.5c6-.4 12-.4 18 0 1.2.1 1.5 1 1.5 2 .2 5.6.2 11.4 0 17 0 1.1-.4 1.8-1.5 2-6 .4-12 .4-18 0-1.1-.1-1.5-.9-1.5-2-.2-5.6-.2-11.4 0-17 0-1 .4-1.9 1.5-2z" stroke="#08595E"/><path d="M11 14v8M11 10v.2" stroke="#08595E"/><path d="M16 22v-8m0 4c0-2.4 1.4-4 3.3-4S22 15.4 22 18v4" stroke="#AD82AA"/></svg></span>
-        <span><strong>LinkedIn</strong><span>[seu perfil]</span></span>
       </a>
     </div>
     <!-- OPCIONAL: "Perfil no Google" — ative somente quando houver avaliações reais no Google.
@@ -609,7 +624,6 @@ dialog h3{font-size:1.05rem;margin-top:1.25rem}
       </div>
       <div class="footer-icons">
         <a class="js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 5.5c4-.4 8-.4 12 0 3.4.4 5 2.2 5.4 5.4.4 3.4.4 6.8 0 10.2-.4 3.2-2 5-5.4 5.4-4 .4-8 .4-12 0-3.4-.4-5-2.2-5.4-5.4-.4-3.4-.4-6.8 0-10.2.4-3.2 2-5 5.4-5.4z"/><circle cx="16" cy="16" r="5"/></svg></a>
-        <a class="js-li" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><!-- EDITAR: remova se não usar LinkedIn --><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M11 14v8M11 10v.2M16 22v-8m0 4c0-2.4 1.4-4 3.3-4S22 15.4 22 18v4"/><rect x="5.5" y="5.5" width="21" height="21" rx="4"/></svg></a>
         <a class="js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.2 4 4.5 4.6"/></svg></a>
         <a class="js-mail" href="#" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5c5.6-.4 11.4-.4 17 0 .4 3.7.4 7.3 0 11-5.6.4-11.4.4-17 0-.4-3.7-.4-7.3 0-11z"/><path d="M4 7l8 6 8-6"/></svg></a>
       </div>
@@ -653,8 +667,6 @@ const CONFIG = {
   whatsappMensagem: 'Olá, Gabrieli! Vim pelo seu site e gostaria de saber mais sobre a psicoterapia online.', // EDITAR
   email: 'psigabrielifroehner@gmail.com',                // EDITAR
   instagram: 'psi.gabifroehner',                         // EDITAR: sem @
-  linkedin: 'https://www.linkedin.com/in/SEU-PERFIL',    // EDITAR (ou remova os cards de LinkedIn no HTML)
-  convenio: '[CONFIRMAR: resposta sobre convênio]',      // EDITAR: ex. "No momento, os atendimentos são particulares. Posso emitir recibo para solicitar reembolso, conforme o seu plano."
   // Foto, logos, texto do "Sobre" e domínio (Open Graph) são trocados direto no HTML (procure por EDITAR)
   reflexoes: [
     'Você não precisa dar conta de tudo sozinha.',
@@ -677,10 +689,8 @@ $('.js-mail').forEach(a => a.href = 'mailto:' + CONFIG.email);
 $('.js-email').forEach(e => e.textContent = CONFIG.email);
 $('.js-ig').forEach(a => a.href = 'https://instagram.com/' + CONFIG.instagram);
 $('.js-ig-handle').forEach(e => e.textContent = '@' + CONFIG.instagram);
-$('.js-li').forEach(a => a.href = CONFIG.linkedin);
 $('.js-crp').forEach(e => e.textContent = CONFIG.crp);
 $('.js-phone').forEach(e => e.textContent = CONFIG.whatsappExibicao);
-$('.js-convenio').forEach(e => e.textContent = CONFIG.convenio);
 
 /* ---------- patterns (flores, corações, asteriscos, brilhos) ---------- */
 function petal(c,r){return `<path transform="rotate(${r})" d="M0 0C-15-18-16-44-2-52C13-47 16-20 1 1" fill="none" stroke="${c}" stroke-width="3.2" stroke-linecap="round"/>`}
